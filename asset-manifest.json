@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.baef9895.css",
+    "main.css": "/static/css/main.671a8034.css",
     "main.js": "/static/js/main.109143ab.js",
     "static/media/shoescape.webp": "/static/media/shoescape.e021ad81d3ba0a7eda12.webp",
     "static/media/portfolio.webp": "/static/media/portfolio.f575712612d7ea5d90ba.webp",
@@ -30,11 +30,11 @@
     "static/media/Matt Blanc.jpg": "/static/media/Matt Blanc.6803333afc096b4a5930.jpg",
     "static/media/Cole Spouse.jpg": "/static/media/Cole Spouse.3d3e783df050827f3ce4.jpg",
     "index.html": "/index.html",
-    "main.baef9895.css.map": "/static/css/main.baef9895.css.map",
+    "main.671a8034.css.map": "/static/css/main.671a8034.css.map",
     "main.109143ab.js.map": "/static/js/main.109143ab.js.map"
   },
   "entrypoints": [
-    "static/css/main.baef9895.css",
+    "static/css/main.671a8034.css",
     "static/js/main.109143ab.js"
   ]
 }
