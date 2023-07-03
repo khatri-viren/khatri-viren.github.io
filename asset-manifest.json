@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.671a8034.css",
-    "main.js": "/static/js/main.01d10a73.js",
+    "main.js": "/static/js/main.a9406a3f.js",
     "static/media/shoescape.webp": "/static/media/shoescape.622562ed38f96457ed06.webp",
     "static/media/Rishi Kapoor.jpg": "/static/media/Rishi Kapoor.0480637afcd0d0852346.jpg",
     "static/media/David Schwimmer.JPG": "/static/media/David Schwimmer.da23c52019bd2eed34e5.JPG",
@@ -31,10 +31,10 @@
     "static/media/Cole Spouse.jpg": "/static/media/Cole Spouse.3d3e783df050827f3ce4.jpg",
     "index.html": "/index.html",
     "main.671a8034.css.map": "/static/css/main.671a8034.css.map",
-    "main.01d10a73.js.map": "/static/js/main.01d10a73.js.map"
+    "main.a9406a3f.js.map": "/static/js/main.a9406a3f.js.map"
   },
   "entrypoints": [
     "static/css/main.671a8034.css",
-    "static/js/main.01d10a73.js"
+    "static/js/main.a9406a3f.js"
   ]
 }
