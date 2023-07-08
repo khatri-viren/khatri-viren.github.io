@@ -1,0 +1,19 @@
+.skills__container {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: auto;
+    justify-content: center;
+}
+
+
+.skill {
+    padding: 1rem 1rem;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+    font-size: var(--small-font-size);
+    background: var(--container-color);
+    border-radius: .5rem;
+    color: var(--text-color);
+    border: 0.5px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 0px 0.5rem -0.1rem rgba(138, 138, 138, 0.259);
+}
