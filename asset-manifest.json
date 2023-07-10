@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.671a8034.css",
-    "main.js": "/static/js/main.a9406a3f.js",
+    "main.js": "/static/js/main.1f593be6.js",
     "static/media/shoescape.webp": "/static/media/shoescape.622562ed38f96457ed06.webp",
     "static/media/Rishi Kapoor.jpg": "/static/media/Rishi Kapoor.0480637afcd0d0852346.jpg",
     "static/media/David Schwimmer.JPG": "/static/media/David Schwimmer.da23c52019bd2eed34e5.JPG",
@@ -13,7 +13,7 @@
     "static/media/Pinterest3.jpg": "/static/media/Pinterest3.f6040eeb7503be9b694d.jpg",
     "static/media/Billie Ellish.jpg": "/static/media/Billie Ellish.90896effbdb2757d9cb7.jpg",
     "static/media/portfolio.webp": "/static/media/portfolio.6f21938420e52aaa80fe.webp",
-    "static/media/Viren Khatri Resume.pdf": "/static/media/Viren Khatri Resume.32ee36f88ff328259400.pdf",
+    "static/media/Viren Khatri Resume.pdf": "/static/media/Viren Khatri Resume.5947ad92268721916dac.pdf",
     "static/media/War of the Planet of the Apes.jpg": "/static/media/War of the Planet of the Apes.3a469e7cecbbb04c1f66.jpg",
     "static/media/Maitri Gajjar.jpg": "/static/media/Maitri Gajjar.7f8c29e96a13d2a3e1e8.jpg",
     "static/media/Img2.jpg": "/static/media/Img2.7a65d0f7af91ee649288.jpg",
@@ -31,10 +31,10 @@
     "static/media/Cole Spouse.jpg": "/static/media/Cole Spouse.3d3e783df050827f3ce4.jpg",
     "index.html": "/index.html",
     "main.671a8034.css.map": "/static/css/main.671a8034.css.map",
-    "main.a9406a3f.js.map": "/static/js/main.a9406a3f.js.map"
+    "main.1f593be6.js.map": "/static/js/main.1f593be6.js.map"
   },
   "entrypoints": [
     "static/css/main.671a8034.css",
-    "static/js/main.a9406a3f.js"
+    "static/js/main.1f593be6.js"
   ]
 }
