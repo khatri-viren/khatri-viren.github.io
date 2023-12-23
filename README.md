@@ -47,7 +47,7 @@ npm -v
 1. Clone the repository to your local machine.
 
 ```bash
-git clone https://github.com/your-username/your-portfolio.git
+git clone https://github.com/khatri-viren/khatri-viren.github.io.git
 ```
 
 2. Change into the project directory.
