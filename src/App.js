@@ -11,6 +11,7 @@ import ScrollUp from "./components/scrollup/ScrollUp";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import RecentWork from "./components/work/RecentWork";
 import Hobbies from "./components/hobbies/Hobbies";
+import Qualification from "./components/qualification/Qualification";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
                 <About />
                 <Skills />
                 <RecentWork />
+                <Qualification />
                 <Contact />
               </>
             }

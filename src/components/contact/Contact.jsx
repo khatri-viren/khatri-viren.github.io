@@ -17,6 +17,7 @@ const Contact = () => {
       process.env.REACT_APP_PUBLIC_KEY
     );
     e.target.reset();
+    alert("Message sent Successfully!");
   };
 
   return (

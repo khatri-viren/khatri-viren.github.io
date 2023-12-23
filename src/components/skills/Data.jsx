@@ -1,2 +1,17 @@
 // Frontend Languages
-export const data = [ "HTML", "CSS", "Javascript", "React", "PHP", "MySQL", "NodeJS", "Express", "MongoDB", "Bootstrap"]
+export const data = [
+  "HTML",
+  "CSS",
+  "Javascript",
+  "ReactJs",
+  "TailwindCSS",
+  "PHP",
+  "MySQL",
+  "NodeJS",
+  "ExpressJs",
+  "MongoDB",
+  "Bootstrap",
+  "Python",
+  "Flask",
+  "C/C++",
+];

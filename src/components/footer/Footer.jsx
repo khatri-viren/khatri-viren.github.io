@@ -14,7 +14,7 @@ const Footer = () => {
             </a>
           </li>
           <li>
-            <a href="#portfolio" className="footer__link">
+            <a href="/portfolio" className="footer__link">
               Projects
             </a>
           </li>
@@ -48,7 +48,9 @@ const Footer = () => {
             <i className="bx bxl-twitter"></i> 
           </a>
         </div> */}
-        <span className="footer__copy">&#169; Viren Khatri. All rights reserved</span>
+        <span className="footer__copy">
+          &#169; Viren Khatri. All rights reserved
+        </span>
       </div>
     </footer>
   );
