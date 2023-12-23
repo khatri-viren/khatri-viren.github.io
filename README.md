@@ -53,7 +53,7 @@ git clone https://github.com/khatri-viren/khatri-viren.github.io.git
 2. Change into the project directory.
 
 ```bash
-cd your-portfolio
+cd khatri-viren.github.io
 ```
 
 3. Install the dependencies.
