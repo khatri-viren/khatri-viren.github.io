@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.671a8034.css",
-    "main.js": "/static/js/main.c9247a38.js",
+    "main.css": "/static/css/main.5171f29a.css",
+    "main.js": "/static/js/main.7f09b7e1.js",
     "static/media/shoescape.webp": "/static/media/shoescape.622562ed38f96457ed06.webp",
     "static/media/Rishi Kapoor.jpg": "/static/media/Rishi Kapoor.0480637afcd0d0852346.jpg",
     "static/media/David Schwimmer.JPG": "/static/media/David Schwimmer.da23c52019bd2eed34e5.JPG",
@@ -9,6 +9,7 @@
     "static/media/VProfile.webp": "/static/media/VProfile.2f7df98f4dacb1aa0d91.webp",
     "static/media/IMG_0357.JPG": "/static/media/IMG_0357.4e57470635681e6b5d57.JPG",
     "static/media/Millie Bobby Brown.jpg": "/static/media/Millie Bobby Brown.1109c99efde6cd4cc210.jpg",
+    "static/media/flora-care.png": "/static/media/flora-care.5017cd2b9ff35907903e.png",
     "static/media/Riddhi.jpg": "/static/media/Riddhi.c11e130a43661ed73b4e.jpg",
     "static/media/Pinterest3.jpg": "/static/media/Pinterest3.f6040eeb7503be9b694d.jpg",
     "static/media/Billie Ellish.jpg": "/static/media/Billie Ellish.90896effbdb2757d9cb7.jpg",
@@ -27,14 +28,15 @@
     "static/media/Hyper-Realistic.jpg": "/static/media/Hyper-Realistic.e736501a1c36d720b306.jpg",
     "static/media/Darren Barnet.jpg": "/static/media/Darren Barnet.6cbe1b38c2810e3afdbf.jpg",
     "static/media/Hazel Sheth.jpg": "/static/media/Hazel Sheth.600de03282e21f32bcaf.jpg",
+    "static/media/note-nest.png": "/static/media/note-nest.9c77461152fdb58a5956.png",
     "static/media/Matt Blanc.jpg": "/static/media/Matt Blanc.6803333afc096b4a5930.jpg",
     "static/media/Cole Spouse.jpg": "/static/media/Cole Spouse.3d3e783df050827f3ce4.jpg",
     "index.html": "/index.html",
-    "main.671a8034.css.map": "/static/css/main.671a8034.css.map",
-    "main.c9247a38.js.map": "/static/js/main.c9247a38.js.map"
+    "main.5171f29a.css.map": "/static/css/main.5171f29a.css.map",
+    "main.7f09b7e1.js.map": "/static/js/main.7f09b7e1.js.map"
   },
   "entrypoints": [
-    "static/css/main.671a8034.css",
-    "static/js/main.c9247a38.js"
+    "static/css/main.5171f29a.css",
+    "static/js/main.7f09b7e1.js"
   ]
 }
