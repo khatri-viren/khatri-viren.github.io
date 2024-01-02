@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./qualification.css";
 
 const Qualification = () => {
-  const [toggleState, setToggleState] = useState(2);
+  const [toggleState, setToggleState] = useState(1);
 
   // eslint-disable-next-line no-unused-vars
   const toggleTab = (index) => {
