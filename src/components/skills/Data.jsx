@@ -5,7 +5,15 @@ export const skillCategories = [
   },
   {
     title: "Frontend",
-    items: ["React", "Next.js", "Zustand", "Tailwind CSS", "HTML5", "CSS", "TanStack"],
+    items: [
+      "React",
+      "Next.js",
+      "Zustand",
+      "Tailwind CSS",
+      "HTML5",
+      "CSS",
+      "TanStack",
+    ],
   },
   {
     title: "Databases & caching",
@@ -13,7 +21,7 @@ export const skillCategories = [
   },
   {
     title: "Backend & APIs",
-    items: ["Node.js", "Express.js", "Mastra", "REST API design", "Webhooks", "SSE"],
+    items: ["Node.js", "Express.js", "REST API design", "Webhooks", "SSE"],
   },
   {
     title: "AI systems",
@@ -24,6 +32,8 @@ export const skillCategories = [
       "Multi-agent systems",
       "Vercel AI SDK",
       "LangChain",
+      "LangGraph",
+      "Mastra",
     ],
   },
   {
