@@ -21,9 +21,9 @@ const Hobbies = () => {
       <h1 className="section__title">My Hobbies</h1>
       <span className="section__subtitle">All my artworks</span>
       <div className="container grid grid-cols-[repeat(3,max-content)] justify-center gap-8 max-[992px]:grid-cols-[repeat(2,max-content)] max-[992px]:gap-5 max-md:grid-cols-[max-content] max-[576px]:grid-cols-1 max-[576px]:justify-items-stretch">
-        {currentPosts.map((item) => {
-          return <Item img={item.image} key={item.title} name={item.title} />;
-        })}
+        {currentPosts.map((item) => (
+          <Item file={item.file} key={item.file} name={item.title} />
+        ))}
       </div>
       <div className="mt-8 flex justify-center">
         <ReactPaginate

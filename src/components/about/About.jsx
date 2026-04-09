@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useCallback, useRef, useState } from "react";
 import { BriefcaseBusiness, GraduationCap, MapPin } from "lucide-react";
-import CV from "../../assets/Viren_Khatri_9_April_2026.pdf";
 
 const quickFacts = [
   {
@@ -21,6 +20,30 @@ const quickFacts = [
 ];
 
 const About = () => {
+  const [cvLoading, setCvLoading] = useState(false);
+  const cvBusyRef = useRef(false);
+
+  const downloadCv = useCallback(async () => {
+    if (cvBusyRef.current) return;
+    cvBusyRef.current = true;
+    setCvLoading(true);
+    try {
+      const { default: href } = await import(
+        "../../assets/Viren_Khatri_9_April_2026.pdf"
+      );
+      const a = document.createElement("a");
+      a.href = href;
+      a.download = "Viren_Khatri_9_April_2026.pdf";
+      a.rel = "noopener";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+    } finally {
+      cvBusyRef.current = false;
+      setCvLoading(false);
+    }
+  }, []);
+
   return (
     <section
       className="section py-18! pb-8! max-md:py-9! max-md:pb-8!"
@@ -116,12 +139,13 @@ const About = () => {
               })}
             </div>
 
-            <a
-              download=""
-              href={CV}
-              className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full border border-border/60 bg-background/80 px-4 py-3 text-sm font-medium text-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-border hover:bg-card"
+            <button
+              type="button"
+              onClick={downloadCv}
+              disabled={cvLoading}
+              className="mt-4 inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-full border border-border/60 bg-background/80 px-4 py-3 text-sm font-medium text-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-border hover:bg-card disabled:pointer-events-none disabled:opacity-70"
             >
-              Download CV
+              {cvLoading ? "Preparing…" : "Download CV"}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="18"
@@ -134,7 +158,7 @@ const About = () => {
                 <path d="M13.25 13.7502H7.25C6.84 13.7502 6.5 13.4102 6.5 13.0002C6.5 12.5902 6.84 12.2502 7.25 12.2502H13.25C13.66 12.2502 14 12.5902 14 13.0002C14 13.4102 13.66 13.7502 13.25 13.7502Z"></path>
                 <path d="M11.25 17.7502H7.25C6.84 17.7502 6.5 17.4102 6.5 17.0002C6.5 16.5902 6.84 16.2502 7.25 16.2502H11.25C11.66 16.2502 12 16.5902 12 17.0002C12 17.4102 11.66 17.7502 11.25 17.7502Z"></path>
               </svg>
-            </a>
+            </button>
           </div>
         </div>
       </div>

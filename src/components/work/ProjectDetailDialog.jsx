@@ -87,6 +87,8 @@ const ProjectDetailDialog = ({ item, open, onOpenChange }) => {
                       <img
                         src={src}
                         alt={`${item.title} — screenshot ${i + 1}`}
+                        loading="lazy"
+                        decoding="async"
                         className="aspect-video w-full rounded-lg object-cover ring-1 ring-border/50"
                       />
                     </CarouselItem>
@@ -100,6 +102,8 @@ const ProjectDetailDialog = ({ item, open, onOpenChange }) => {
             <img
               src={item.image}
               alt={`${item.title} — project preview`}
+              loading="lazy"
+              decoding="async"
               className="aspect-video w-full rounded-lg object-cover ring-1 ring-border/50"
             />
           )}

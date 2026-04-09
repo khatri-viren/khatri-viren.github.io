@@ -66,12 +66,15 @@ const Footer = () => {
               Viren
             </Link>
             <p className="max-w-sm text-pretty text-sm leading-relaxed text-muted-foreground">
-              Full-stack engineer and technology leader in Pune — scalable products, JS/TS stack, and
+              Full-stack engineer in Pune — scalable products, JS/TS stack, and
               product-minded builds.
             </p>
           </div>
 
-          <nav className="md:max-lg:col-span-1 lg:col-span-3" aria-label="Footer navigation">
+          <nav
+            className="md:max-lg:col-span-1 lg:col-span-3"
+            aria-label="Footer navigation"
+          >
             <span className={sectionLabelClass}>Explore</span>
             <ul className="grid gap-2 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-2">
               {EXPLORE.map((item) => (

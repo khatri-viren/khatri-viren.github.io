@@ -1,20 +1,21 @@
-import React, { useEffect } from "react";
+import React, { Suspense, lazy, useEffect } from "react";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import { useTheme } from "next-themes";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Header from "./components/header/Header";
 import Home from "./components/home/Home";
-import About from "./components/about/About";
-import Skills from "./components/skills/Skills";
-import Work from "./components/work/Work";
-import Contact from "./components/contact/Contact";
 import Footer from "./components/footer/Footer";
 import ScrollUp from "./components/scrollup/ScrollUp";
-import RecentWork from "./components/work/RecentWork";
-import Hobbies from "./components/hobbies/Hobbies";
-import Qualification from "./components/qualification/Qualification";
-import Privacy from "./components/legal/Privacy";
 import { SeoHead } from "./seo/SeoHead";
+
+const About = lazy(() => import("./components/about/About"));
+const Skills = lazy(() => import("./components/skills/Skills"));
+const RecentWork = lazy(() => import("./components/work/RecentWork"));
+const Qualification = lazy(() => import("./components/qualification/Qualification"));
+const Contact = lazy(() => import("./components/contact/Contact"));
+const Work = lazy(() => import("./components/work/Work"));
+const Hobbies = lazy(() => import("./components/hobbies/Hobbies"));
+const Privacy = lazy(() => import("./components/legal/Privacy"));
 
 function ScrollToHash() {
   const location = useLocation();
@@ -50,6 +51,10 @@ function ThemeMetaColor() {
   return null;
 }
 
+function LazySection({ children }) {
+  return <Suspense fallback={null}>{children}</Suspense>;
+}
+
 function App() {
   return (
     <TooltipProvider delayDuration={300}>
@@ -65,18 +70,49 @@ function App() {
               element={
                 <>
                   <Home />
-                  <About />
-                  <Skills />
-                  <RecentWork />
-                  <Qualification />
-                  <Contact />
+                  <LazySection>
+                    <About />
+                  </LazySection>
+                  <LazySection>
+                    <Skills />
+                  </LazySection>
+                  <LazySection>
+                    <RecentWork />
+                  </LazySection>
+                  <LazySection>
+                    <Qualification />
+                  </LazySection>
+                  <LazySection>
+                    <Contact />
+                  </LazySection>
                 </>
               }
             />
 
-            <Route path="/portfolio" element={<Work />} />
-            <Route path="/hobbies" element={<Hobbies />} />
-            <Route path="/privacy" element={<Privacy />} />
+            <Route
+              path="/portfolio"
+              element={
+                <LazySection>
+                  <Work />
+                </LazySection>
+              }
+            />
+            <Route
+              path="/hobbies"
+              element={
+                <LazySection>
+                  <Hobbies />
+                </LazySection>
+              }
+            />
+            <Route
+              path="/privacy"
+              element={
+                <LazySection>
+                  <Privacy />
+                </LazySection>
+              }
+            />
           </Routes>
         </main>
         <Footer />

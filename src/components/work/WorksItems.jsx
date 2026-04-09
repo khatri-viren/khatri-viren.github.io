@@ -3,7 +3,7 @@ import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import ProjectDetailDialog from "./ProjectDetailDialog";
 
-const WorksItems = ({ item, truncateDescription = false }) => {
+const WorksItems = ({ item, truncateDescription = false, imagePriority = false }) => {
   const [open, setOpen] = useState(false);
 
   const openDialog = useCallback(() => setOpen(true), []);
@@ -33,6 +33,9 @@ const WorksItems = ({ item, truncateDescription = false }) => {
           <img
             src={item.image}
             alt={`${item.title} — project preview`}
+            loading={imagePriority ? "eager" : "lazy"}
+            decoding="async"
+            fetchPriority={imagePriority ? "high" : "low"}
             className="pointer-events-none aspect-video w-full rounded-lg object-cover ring-1 ring-border/50"
           />
           <CardTitle

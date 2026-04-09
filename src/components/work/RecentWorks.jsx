@@ -7,8 +7,13 @@ const RecentWorks = () => {
   return (
     <div>
       <div className="container mx-auto grid w-full max-w-6xl grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-5">
-        {items.map((item) => (
-          <WorksItems item={item} key={item.id} truncateDescription />
+        {items.map((item, index) => (
+          <WorksItems
+            item={item}
+            key={item.id}
+            truncateDescription
+            imagePriority={index === 0}
+          />
         ))}
       </div>
     </div>
