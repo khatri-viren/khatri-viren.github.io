@@ -23,6 +23,11 @@ const Footer = () => {
               Skills
             </a>
           </li>
+          <li>
+            <a href="#qualification" className="footer__link">
+              Experience
+            </a>
+          </li>
         </ul>
 
         {/* <div className="footer__social">

@@ -1,3 +1,7 @@
+.work.section {
+  overflow-x: clip;
+}
+
 .work__filters {
   display: flex;
   justify-content: center;
@@ -22,26 +26,48 @@
 }
 
 .work__container {
-  grid-template-columns: repeat(3, max-content);
-  gap: 3rem;
+  display: grid;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  /* Fluid columns: fit viewport, wrap instead of overflowing horizontally */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: 1.5rem;
   justify-content: center;
+  align-items: stretch;
 }
 
 .work__card {
   background-color: var(--container-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 1.25rem;
+  padding: 1rem;
   border-radius: 1rem;
+  min-width: 0;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-.word__desc {
-  
+.work__desc {
+  font-size: var(--small-font-size);
+  color: var(--text-color);
+  line-height: 1.5;
+  margin-bottom: var(--mb-0-75);
+  flex-grow: 1;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .work__img {
-  width: 295px;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
   border-radius: 1rem;
   margin-bottom: var(--mb-1);
+  display: block;
 }
 
 .work__title {
@@ -67,6 +93,11 @@
   transform: translateX(0.25rem);
 }
 
+.work__button--static {
+  cursor: default;
+  opacity: 0.85;
+}
+
 /* active work */
 .active-work {
   background-color: var(--title-color);
@@ -76,11 +107,7 @@
 @media screen and (max-width: 992px) {
   .work__container {
     gap: 1.25rem;
-    grid-template-columns: repeat(2, max-content);
-  }
-
-  .work__card {
-    padding: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
   }
 
   .work__img {
@@ -92,20 +119,10 @@
   }
 }
 
-/* For medium devices */
-@media screen and (max-width: 768px) {
-  .work__container {
-    grid-template-columns: max-content;
-  }
-}
-
+/* For medium devices: single column on narrow screens */
 @media screen and (max-width: 576px) {
   .work__container {
     grid-template-columns: 1fr;
-  }
-
-  .work__img {
-    width: 100%;
   }
 }
 

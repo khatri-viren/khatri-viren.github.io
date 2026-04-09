@@ -4,14 +4,14 @@ import "./qualification.css";
 const Qualification = () => {
   const [toggleState, setToggleState] = useState(1);
 
-  // eslint-disable-next-line no-unused-vars
   const toggleTab = (index) => {
     setToggleState(index);
   };
+
   return (
-    <section className="qualification section">
-      <h2 className="section__title">Experience</h2>
-      <span className="section__subtitle">My personal journey</span>
+    <section className="qualification section" id="qualification">
+      <h2 className="section__title">Qualifications</h2>
+      <span className="section__subtitle">Education &amp; experience</span>
 
       <div className="qualification__container container">
         <div className="qualification__tabs">
@@ -22,21 +22,27 @@ const Qualification = () => {
                 : "qualification__button button--flex"
             }
             onClick={() => toggleTab(1)}
+            onKeyDown={(e) => e.key === "Enter" && toggleTab(1)}
+            role="button"
+            tabIndex={0}
           >
-            <i className="ui uil-graduation-cap qualification__icon"></i>
+            <i className="uil uil-graduation-cap qualification__icon"></i>
             Education
           </div>
-          {/* <div
+          <div
             className={
               toggleState === 2
                 ? "qualification__button button--flex qualification__active"
                 : "qualification__button button--flex"
             }
             onClick={() => toggleTab(2)}
+            onKeyDown={(e) => e.key === "Enter" && toggleTab(2)}
+            role="button"
+            tabIndex={0}
           >
-            <i className="ui uil-briefcase-alt qualification__icon"></i>
+            <i className="uil uil-briefcase-alt qualification__icon"></i>
             Experience
-          </div> */}
+          </div>
         </div>
 
         <div className="qualification__sections">
@@ -50,17 +56,16 @@ const Qualification = () => {
             <div className="qualification__data">
               <div>
                 <h3 className="qualification__title">
-                  B.Tech Computer Science
+                  B.Tech Computer Science &amp; Engineering
                 </h3>
-                <span className="qualification__subtitile">
-                  {" "}
-                  MIT World Peace University
+                <span className="qualification__subtitle">
+                  MIT World Peace University, Pune
                 </span>
                 <div className="qualification__calender">
-                  <i className="uil uil-calendar-alt"></i> 2021 - Present
+                  <i className="uil uil-calendar-alt"></i> 2021 – May 2025 ·
+                  CGPA 9.21
                 </div>
               </div>
-
               <div>
                 <span className="qualification__rounder"></span>
                 <span className="qualification__line"></span>
@@ -74,31 +79,28 @@ const Qualification = () => {
                 <span className="qualification__line"></span>
               </div>
               <div>
-                <h3 className="qualification__title">Senior Secondary XII</h3>
-                <span className="qualification__subtitile">
+                <h3 className="qualification__title">Senior Secondary (XII)</h3>
+                <span className="qualification__subtitle">
                   Nowrosjee Wadia College
                 </span>
                 <div className="qualification__calender">
-                  <i className="uil uil-calendar-alt"></i> 2018 - 2020
+                  <i className="uil uil-calendar-alt"></i> 2018 – 2020
                 </div>
               </div>
             </div>
 
             <div className="qualification__data">
               <div>
-                <h3 className="qualification__title">Higher Secondary X</h3>
-                <span className="qualification__subtitile">
-                  {" "}
+                <h3 className="qualification__title">Higher Secondary (X)</h3>
+                <span className="qualification__subtitle">
                   Sardar Dastur Hormazdiar High School
                 </span>
                 <div className="qualification__calender">
                   <i className="uil uil-calendar-alt"></i> 2018
                 </div>
               </div>
-
               <div>
                 <span className="qualification__rounder"></span>
-                <span className="qualification__line"></span>
               </div>
             </div>
           </div>
@@ -112,16 +114,25 @@ const Qualification = () => {
           >
             <div className="qualification__data">
               <div>
-                <h3 className="qualification__title">B.Tech asdfk Science</h3>
-                <span className="qualification__subtitile">
-                  {" "}
-                  MIT World Peace University
+                <h3 className="qualification__title">
+                  Co-Founder &amp; Chief Technology Officer (CTO)
+                </h3>
+                <span className="qualification__subtitle">
+                  WorqHat (Winlysis Private Limited), Pune
                 </span>
                 <div className="qualification__calender">
-                  <i className="uil uil-calendar-alt"></i> 2021 - 2025
+                  <i className="uil uil-calendar-alt"></i> January 2025 –
+                  February 2026
                 </div>
+                <p className="qualification__summary">
+                  Scaled a multi-tenant SaaS platform (database, workflow
+                  automation, UI builder, external portals). Shipped a
+                  production workflow engine (40+ nodes, event triggers, ~100K+
+                  executions/day per tenant, 99.9% reliability). Led SmartMocks
+                  architecture—async pipelines, queues, 1000+ concurrent users,
+                  6K+ jobs/hour. Mentored 5+ engineers.
+                </p>
               </div>
-
               <div>
                 <span className="qualification__rounder"></span>
                 <span className="qualification__line"></span>
@@ -132,37 +143,22 @@ const Qualification = () => {
               <div></div>
               <div>
                 <span className="qualification__rounder"></span>
-                <span className="qualification__line"></span>
               </div>
-              <div>
-                <h3 className="qualification__title">Lorem, ipsum</h3>
-                <span className="qualification__subtitile">
-                  {" "}
-                  MIT World Peace University
-                </span>
-                <div className="qualification__calender">
-                  <i className="uil uil-calendar-alt"></i> 2021 - Present
-                </div>
-              </div>
-            </div>
-
-            <div className="qualification__data">
               <div>
                 <h3 className="qualification__title">
-                  B.Tech Computer Science
+                  Full Stack Development Intern
                 </h3>
-                <span className="qualification__subtitile">
-                  {" "}
-                  MIT World Peace University
+                <span className="qualification__subtitle">
+                  WorqHat (Winlysis Private Limited), Pune
                 </span>
                 <div className="qualification__calender">
-                  <i className="uil uil-calendar-alt"></i> 2021 - Present
+                  <i className="uil uil-calendar-alt"></i> January 2024 –
+                  December 2024
                 </div>
-              </div>
-
-              <div>
-                <span className="qualification__rounder"></span>
-                <span className="qualification__line"></span>
+                <p className="qualification__summary">
+                  Built a drag-and-drop no-code backend system; platform for
+                  RFQs, POs, deliveries, and financial data.
+                </p>
               </div>
             </div>
           </div>

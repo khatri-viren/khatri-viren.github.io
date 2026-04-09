@@ -1,10 +1,28 @@
 .skills__container {
     display: flex;
-    flex-wrap: wrap;
-    overflow: auto;
-    justify-content: center;
+    flex-direction: column;
+    gap: var(--mb-1-5);
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+.skills__group {
+    width: 100%;
+}
+
+.skills__group-title {
+    font-size: var(--small-font-size);
+    font-weight: var(--font-medium);
+    color: var(--title-color);
+    margin-bottom: var(--mb-0-75);
+}
+
+.skills__chips {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
 
 .skill {
     padding: 1rem 1rem;

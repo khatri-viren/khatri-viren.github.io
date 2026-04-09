@@ -1,5 +1,3 @@
-/* eslint-disable react/jsx-no-target-blank */
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import "./contact.css";
@@ -11,10 +9,10 @@ const Contact = () => {
     e.preventDefault();
 
     emailjs.sendForm(
-      process.env.REACT_APP_SERVICE_ID,
-      process.env.REACT_APP_TEMPLATE_ID,
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
       form.current,
-      process.env.REACT_APP_PUBLIC_KEY
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
     );
     e.target.reset();
     alert("Message sent Successfully!");
@@ -35,7 +33,7 @@ const Contact = () => {
               <span className="contact__card-data">vk102002@gmail.com</span>
 
               <a
-                href="mailto:vk102002@gmail.com.com"
+                href="mailto:vk102002@gmail.com"
                 className="contact__button"
               >
                 Write me{" "}
@@ -66,6 +64,8 @@ const Contact = () => {
               <a
                 href="https://github.com/khatri-viren"
                 className="contact__button"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Let's connect{" "}
                 <i className="bx bx-right-arrow-alt contact__button-icon"></i>

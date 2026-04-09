@@ -55,9 +55,11 @@ const Data = () => {
           ></path>
         </svg>
       </h1>
-      <h3 className="home__subtitle">Web Developer</h3>
+      <h3 className="home__subtitle">Software Engineer</h3>
       <p className="home__description">
-      I'm a design-minded, detail oriented software engineer passionate about combining beautiful code with beautiful design.
+        I build scalable full-stack products and distributed systems—low-latency backends, REST APIs, and modern
+        frontends with React and Next.js. I care about system design, concurrency, and reliable pipelines, with recent
+        work spanning AI-driven workflows, semantic search, and multi-tenant SaaS.
       </p>
       <a href="#contact" className="button button--flex">
         Say Hello

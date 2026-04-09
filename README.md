@@ -62,21 +62,21 @@ cd khatri-viren.github.io
 npm install
 ```
 
-4. Add a .env file and add the following variables to it.
+4. Copy [.env.example](.env.example) to `.env` and set your EmailJS values. Vite only exposes environment variables whose names start with `VITE_`.
 
 ```bash
-REACT_APP_SERVICE_ID
-REACT_APP_TEMPLATE_ID
-REACT_APP_PUBLIC_KEY
+cp .env.example .env
 ```
+
+Required keys: `VITE_EMAILJS_SERVICE_ID`, `VITE_EMAILJS_TEMPLATE_ID`, `VITE_EMAILJS_PUBLIC_KEY`.
 
 ## Project Structure
 
 - **src:** Contains the source code for the React application.
   - **components:** Reusable React components.
   - **assets:** Reusable assets used in the application.
-  - **App.js:** Main component where the application is structured.
-  - **index.js:** Entry point for the React application.
+  - **App.jsx:** Main component where the application is structured.
+  - **index.jsx:** Entry point for the React application.
 
 ## Usage
 
@@ -86,7 +86,7 @@ To run the development server and preview the website, use the following command
 npm start
 ```
 
-Visit `http://localhost:3000` in your web browser to see the portfolio.
+Visit `http://localhost:5173` in your web browser to see the portfolio (Vite default dev server port).
 
 ## Deployment
 
@@ -100,7 +100,8 @@ npm run deploy
 
 ## Technologies Used
 
-- ReactJS
+- React
+- Vite
 - HTML5
 - CSS3
 - EmailJS

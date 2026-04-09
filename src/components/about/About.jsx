@@ -1,7 +1,7 @@
 import React from "react";
 import "./about.css";
 import AboutImg from "../../assets/VProfile.webp";
-import CV from "../../assets/Viren Khatri Resume.pdf";
+import CV from "../../assets/Viren_Khatri_9_April_2026.pdf";
 // import Info from "./Info";
 
 const About = () => {
@@ -14,8 +14,18 @@ const About = () => {
         <img src={AboutImg} alt="" className="about__img" />
         <div className="about__data">
           <p className="about__description">
-          <b>I'm a third year student at MIT World Peace University in Pune, India studying computer science.</b> I have experience developing and designing software for the web, from simple landing pages to progressive web applications. I strive to create software that not only functions efficiently under the hood, but also provides intuitive, pixel-perfect user experiences. <br /> <br />
-          I love learning new and better ways to create seamless user experiences with clean, efficient, and scalable code. I consider work an ongoing education, and I'm always looking for opportunities to work with those who are willing to share their knowledge as much as I want to learn. At the end of the day, my primary goal is to create something beautiful with people that bring out the best in me. <br /> <br />When I'm not at the computer, I'm usually sketching some portraits with some music on or riding my bike through the mountains.
+            <b>
+              I&apos;m a software engineer based in Pune, India, with a B.Tech in Computer Science from MIT World Peace
+              University (CGPA 9.21).
+            </b>{" "}
+            Most recently I was Co-Founder &amp; CTO at WorqHat, where I helped scale a multi-tenant SaaS platform—UI
+            builder, workflow automation, external portals—and led engineering for SmartMocks, an AI interview product with
+            high-throughput async pipelines and LLM-based evaluation. Before that I was a full-stack intern on the same
+            team, shipping no-code tooling and data platforms. <br /> <br />
+            I focus on backends that stay correct under load, frontends that stay fast at scale, and systems that teams
+            can operate with confidence. I enjoy mentoring engineers and raising the bar on architecture and code
+            quality. <br /> <br />
+            Away from the keyboard I sketch, listen to music, and ride when I can.
           </p>
 
           <a download="" href={CV} className="button button--flex">
