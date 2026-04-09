@@ -1,36 +1,31 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Item from "./Item";
 import { Data } from "./Data";
-import "./hobbies.css";
 import ReactPaginate from "react-paginate";
 
 const Hobbies = () => {
-  const [images, setImages] = useState([]);
+  const [images] = useState(Data);
   const [currentPage, setCurrentPage] = useState(1);
   const [imagesPerPage] = useState(6);
-
-  useEffect(() => {
-    setImages(Data);
-  }, []);
 
   const indexOfLastPost = currentPage * imagesPerPage;
   const indexOfFirstPost = indexOfLastPost - imagesPerPage;
   const currentPosts = images.slice(indexOfFirstPost, indexOfLastPost);
 
   const paginate = ({ selected }) => {
-    setCurrentPage(selected + 1);
+    setCurrentPage(() => selected + 1);
   };
 
   return (
-    <section className="hobbies section" id="hobbies">
-      <h2 className="section__title">My Hobbies</h2>
+    <section className="section" id="hobbies">
+      <h1 className="section__title">My Hobbies</h1>
       <span className="section__subtitle">All my artworks</span>
-      <div className="hobbies__container container grid">
-        {currentPosts.map((item, index) => {
-          return <Item img={item.image} key={index} name={item.title} />;
+      <div className="container grid grid-cols-[repeat(3,max-content)] justify-center gap-8 max-[992px]:grid-cols-[repeat(2,max-content)] max-[992px]:gap-5 max-md:grid-cols-[max-content] max-[576px]:grid-cols-1 max-[576px]:justify-items-stretch">
+        {currentPosts.map((item) => {
+          return <Item img={item.image} key={item.title} name={item.title} />;
         })}
       </div>
-      <div className="hobbies__pagination">
+      <div className="mt-8 flex justify-center">
         <ReactPaginate
           onPageChange={paginate}
           pageCount={Math.ceil(images.length / imagesPerPage)}
@@ -40,7 +35,7 @@ const Hobbies = () => {
           pageLinkClassName={"page-number"}
           previousLinkClassName={"page-number"}
           nextLinkClassName={"page-number"}
-          activeLinkClassName={"active"}
+          activeClassName={"active"}
         />
       </div>
     </section>

@@ -1,168 +1,196 @@
-import React, { useState } from "react";
-import "./qualification.css";
+import React, { useLayoutEffect, useRef, useState } from "react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { cn } from "@/lib/utils";
 
-const Qualification = () => {
-  const [toggleState, setToggleState] = useState(1);
+const education = [
+  {
+    title: "B.Tech Computer Science & Engineering",
+    org: "MIT World Peace University, Pune",
+    period: "2021 – May 2025 · CGPA 9.21",
+    side: "left",
+  },
+  {
+    title: "Senior Secondary (XII)",
+    org: "Nowrosjee Wadia College",
+    period: "2018 – 2020",
+    side: "right",
+  },
+  {
+    title: "Higher Secondary (X)",
+    org: "Sardar Dastur Hormazdiar High School",
+    period: "2018",
+    side: "left",
+  },
+];
 
-  const toggleTab = (index) => {
-    setToggleState(index);
-  };
+const experience = [
+  {
+    title: "Co-Founder & Chief Technology Officer (CTO)",
+    org: "WorqHat, Pune",
+    period: "January 2025 – February 2026",
+    details:
+      "Scaled a multi-tenant SaaS platform across workflow automation, UI builders, and external portals. Led SmartMocks architecture for async pipelines, queue-based orchestration, 1000+ concurrent users, and 6K+ jobs/hour while mentoring 5+ engineers.",
+    side: "left",
+  },
+  {
+    title: "Full Stack Development Intern",
+    org: "WorqHat, Pune",
+    period: "January 2024 – December 2024",
+    details:
+      "Built a drag-and-drop no-code backend system and internal platforms for RFQs, POs, deliveries, and financial workflows.",
+    side: "right",
+  },
+];
+
+const ExpandableDetails = ({ text }) => {
+  const [expanded, setExpanded] = useState(false);
+  const [showToggle, setShowToggle] = useState(false);
+  const textRef = useRef(null);
+
+  useLayoutEffect(() => {
+    const el = textRef.current;
+    if (!el) return;
+
+    const measure = () => {
+      const node = textRef.current;
+      if (!node) return;
+      if (expanded) {
+        setShowToggle(true);
+        return;
+      }
+      setShowToggle(node.scrollHeight > node.clientHeight + 1);
+    };
+
+    measure();
+    const ro = new ResizeObserver(measure);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, [text, expanded]);
 
   return (
-    <section className="qualification section" id="qualification">
+    <div className="mt-3">
+      <p
+        ref={textRef}
+        className={cn(
+          "leading-7 text-muted-foreground",
+          !expanded && "line-clamp-4",
+        )}
+        style={{ fontSize: "var(--small-font-size)" }}
+      >
+        {text}
+      </p>
+      {showToggle ? (
+        <button
+          type="button"
+          className="mt-1.5 text-sm font-medium text-primary underline-offset-4 hover:underline focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          onClick={() => setExpanded((v) => !v)}
+          aria-expanded={expanded}
+        >
+          {expanded ? "Show less" : "Show more"}
+        </button>
+      ) : null}
+    </div>
+  );
+};
+
+const TimelineItem = ({ item, isLast }) => {
+  const alignLeft = item.side === "left";
+
+  return (
+    <div className="grid grid-cols-[auto_1fr] gap-x-5 gap-y-2 md:grid-cols-[1fr_auto_1fr] md:gap-x-8">
+      <div className="col-start-1 row-span-2 row-start-1 flex justify-center md:col-start-2">
+        <div className="flex h-full flex-col items-center">
+          <span className="mt-2 inline-flex size-3 rounded-full bg-primary"></span>
+          {!isLast ? (
+            <span className="mt-3 block h-full w-px min-h-18 bg-border md:min-h-24"></span>
+          ) : null}
+        </div>
+      </div>
+
+      <div
+        className={[
+          "col-start-2 row-start-1 pb-6 max-md:pt-0.5",
+          alignLeft ? "md:col-start-1 md:text-right" : "md:col-start-3",
+        ].join(" ")}
+      >
+        <h3
+          className="font-medium text-foreground"
+          style={{ fontSize: "var(--normal-font-size)" }}
+        >
+          {item.title}
+        </h3>
+        <span
+          className="mt-1.5 inline-block text-muted-foreground"
+          style={{ fontSize: "var(--small-font-size)" }}
+        >
+          {item.org}
+        </span>
+        <div
+          className="mt-2 text-muted-foreground"
+          style={{ fontSize: "var(--small-font-size)" }}
+        >
+          <i className="uil uil-calendar-alt"></i> {item.period}
+        </div>
+        {item.details ? <ExpandableDetails text={item.details} /> : null}
+      </div>
+    </div>
+  );
+};
+
+const Qualification = () => {
+  return (
+    <section className="section" id="qualification">
       <h2 className="section__title">Qualifications</h2>
       <span className="section__subtitle">Education &amp; experience</span>
 
-      <div className="qualification__container container">
-        <div className="qualification__tabs">
-          <div
-            className={
-              toggleState === 1
-                ? "qualification__button button--flex qualification__active"
-                : "qualification__button button--flex"
-            }
-            onClick={() => toggleTab(1)}
-            onKeyDown={(e) => e.key === "Enter" && toggleTab(1)}
-            role="button"
-            tabIndex={0}
+      <div className="container mx-auto max-w-4xl">
+        <Tabs defaultValue="experience" className="w-full">
+          <TabsList
+            variant="line"
+            className="mx-auto mb-10 h-auto w-full max-w-fit flex-wrap justify-center gap-2 rounded-full bg-transparent p-0"
           >
-            <i className="uil uil-graduation-cap qualification__icon"></i>
-            Education
-          </div>
-          <div
-            className={
-              toggleState === 2
-                ? "qualification__button button--flex qualification__active"
-                : "qualification__button button--flex"
-            }
-            onClick={() => toggleTab(2)}
-            onKeyDown={(e) => e.key === "Enter" && toggleTab(2)}
-            role="button"
-            tabIndex={0}
-          >
-            <i className="uil uil-briefcase-alt qualification__icon"></i>
-            Experience
-          </div>
-        </div>
+            <TabsTrigger
+              value="education"
+              className="flex items-center gap-2 rounded-full px-4 py-2 font-medium text-muted-foreground/55 transition-colors hover:text-muted-foreground data-[state=active]:font-semibold data-[state=active]:text-foreground"
+              style={{ fontSize: "var(--h3-font-size)" }}
+            >
+              <i className="uil uil-graduation-cap text-3xl"></i>
+              Education
+            </TabsTrigger>
+            <TabsTrigger
+              value="experience"
+              className="flex items-center gap-2 rounded-full px-4 py-2 font-medium text-muted-foreground/55 transition-colors hover:text-muted-foreground data-[state=active]:font-semibold data-[state=active]:text-foreground"
+              style={{ fontSize: "var(--h3-font-size)" }}
+            >
+              <i className="uil uil-briefcase-alt text-3xl"></i>
+              Experience
+            </TabsTrigger>
+          </TabsList>
 
-        <div className="qualification__sections">
-          <div
-            className={
-              toggleState === 1
-                ? "qualification__content qualification__content-active"
-                : "qualification__content"
-            }
-          >
-            <div className="qualification__data">
-              <div>
-                <h3 className="qualification__title">
-                  B.Tech Computer Science &amp; Engineering
-                </h3>
-                <span className="qualification__subtitle">
-                  MIT World Peace University, Pune
-                </span>
-                <div className="qualification__calender">
-                  <i className="uil uil-calendar-alt"></i> 2021 – May 2025 ·
-                  CGPA 9.21
-                </div>
-              </div>
-              <div>
-                <span className="qualification__rounder"></span>
-                <span className="qualification__line"></span>
-              </div>
+          <TabsContent value="education" className="mt-0 outline-none">
+            <div className="mx-auto flex max-w-4xl flex-col gap-4">
+              {education.map((item, index) => (
+                <TimelineItem
+                  key={item.title}
+                  item={item}
+                  isLast={index === education.length - 1}
+                />
+              ))}
             </div>
+          </TabsContent>
 
-            <div className="qualification__data">
-              <div></div>
-              <div>
-                <span className="qualification__rounder"></span>
-                <span className="qualification__line"></span>
-              </div>
-              <div>
-                <h3 className="qualification__title">Senior Secondary (XII)</h3>
-                <span className="qualification__subtitle">
-                  Nowrosjee Wadia College
-                </span>
-                <div className="qualification__calender">
-                  <i className="uil uil-calendar-alt"></i> 2018 – 2020
-                </div>
-              </div>
+          <TabsContent value="experience" className="mt-0 outline-none">
+            <div className="mx-auto flex max-w-4xl flex-col gap-4">
+              {experience.map((item, index) => (
+                <TimelineItem
+                  key={item.title}
+                  item={item}
+                  isLast={index === experience.length - 1}
+                />
+              ))}
             </div>
-
-            <div className="qualification__data">
-              <div>
-                <h3 className="qualification__title">Higher Secondary (X)</h3>
-                <span className="qualification__subtitle">
-                  Sardar Dastur Hormazdiar High School
-                </span>
-                <div className="qualification__calender">
-                  <i className="uil uil-calendar-alt"></i> 2018
-                </div>
-              </div>
-              <div>
-                <span className="qualification__rounder"></span>
-              </div>
-            </div>
-          </div>
-
-          <div
-            className={
-              toggleState === 2
-                ? "qualification__content qualification__content-active"
-                : "qualification__content"
-            }
-          >
-            <div className="qualification__data">
-              <div>
-                <h3 className="qualification__title">
-                  Co-Founder &amp; Chief Technology Officer (CTO)
-                </h3>
-                <span className="qualification__subtitle">
-                  WorqHat (Winlysis Private Limited), Pune
-                </span>
-                <div className="qualification__calender">
-                  <i className="uil uil-calendar-alt"></i> January 2025 –
-                  February 2026
-                </div>
-                <p className="qualification__summary">
-                  Scaled a multi-tenant SaaS platform (database, workflow
-                  automation, UI builder, external portals). Shipped a
-                  production workflow engine (40+ nodes, event triggers, ~100K+
-                  executions/day per tenant, 99.9% reliability). Led SmartMocks
-                  architecture—async pipelines, queues, 1000+ concurrent users,
-                  6K+ jobs/hour. Mentored 5+ engineers.
-                </p>
-              </div>
-              <div>
-                <span className="qualification__rounder"></span>
-                <span className="qualification__line"></span>
-              </div>
-            </div>
-
-            <div className="qualification__data">
-              <div></div>
-              <div>
-                <span className="qualification__rounder"></span>
-              </div>
-              <div>
-                <h3 className="qualification__title">
-                  Full Stack Development Intern
-                </h3>
-                <span className="qualification__subtitle">
-                  WorqHat (Winlysis Private Limited), Pune
-                </span>
-                <div className="qualification__calender">
-                  <i className="uil uil-calendar-alt"></i> January 2024 –
-                  December 2024
-                </div>
-                <p className="qualification__summary">
-                  Built a drag-and-drop no-code backend system; platform for
-                  RFQs, POs, deliveries, and financial data.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+          </TabsContent>
+        </Tabs>
       </div>
     </section>
   );

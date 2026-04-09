@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://khatri-viren.github.io/sitemap.xml
