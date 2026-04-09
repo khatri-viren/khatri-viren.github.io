@@ -60,22 +60,22 @@ const Data = () => {
         </svg>
       </h1>
       <h3
-        className="relative mb-4 pl-[5.4rem] font-normal text-foreground before:absolute before:left-0 before:top-4 before:h-px before:w-[70px] before:bg-muted-foreground max-[992px]:mb-4 max-[992px]:pl-[3.75rem] max-[992px]:before:top-3.5 max-[992px]:before:w-[42px] max-md:pl-0 max-md:text-center max-md:before:hidden"
+        className="relative mb-4 pl-[5.4rem] font-normal text-foreground before:absolute before:left-0 before:top-4 before:h-px before:w-[70px] before:bg-muted-foreground max-[992px]:mb-4 max-[992px]:pl-15 max-[992px]:before:top-3.5 max-[992px]:before:w-[42px] max-md:pl-0 max-md:text-center max-md:before:hidden"
         style={{ fontSize: "var(--h3-font-size)" }}
       >
-        Full-Stack Engineer &amp; Technology Leader
+        Full-Stack Engineer
       </h3>
       <p
         className="mb-10 max-w-[480px] text-pretty leading-8 text-muted-foreground max-[992px]:mb-8 max-[992px]:max-w-none max-md:text-center"
         style={{ fontSize: "var(--normal-font-size)" }}
       >
-        I build scalable products end-to-end in the JavaScript/TypeScript stack —
-        React, Next.js, Node.js, and modern cloud — from AI-powered platforms
+        I build scalable products end-to-end in the JavaScript/TypeScript stack
+        — React, Next.js, Node.js, and modern cloud — from AI-powered platforms
         and no-code builders to workflow automation, developer tools, and SaaS.
       </p>
       <Button
         asChild
-        className="h-auto rounded-2xl px-6 py-5 text-base shadow-[var(--surface-shadow)] hover:-translate-y-0.5 hover:shadow-[var(--surface-shadow-strong)]"
+        className="h-auto rounded-2xl px-6 py-5 text-base shadow-(--surface-shadow) hover:-translate-y-0.5 hover:shadow-(--surface-shadow-strong)"
       >
         <a href="#contact" className="button--flex">
           Say Hello

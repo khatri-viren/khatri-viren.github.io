@@ -33,6 +33,10 @@ const EXPLORE = [
 
 const MORE = [
   { label: "Portfolio", to: "/portfolio" },
+  {
+    label: "Publications",
+    to: { pathname: "/portfolio", hash: "#publications" },
+  },
   { label: "Hobbies", to: "/hobbies" },
   { label: "Privacy", to: "/privacy" },
 ];

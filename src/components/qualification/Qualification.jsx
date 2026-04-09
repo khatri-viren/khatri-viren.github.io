@@ -28,8 +28,15 @@ const experience = [
     title: "Co-Founder & Chief Technology Officer (CTO)",
     org: "WorqHat, Pune",
     period: "January 2025 – February 2026",
-    details:
-      "Scaled a multi-tenant SaaS platform across workflow automation, UI builders, and external portals. Led SmartMocks architecture for async pipelines, queue-based orchestration, 1000+ concurrent users, and 6K+ jobs/hour while mentoring 5+ engineers.",
+    details: `At WorqHat, we built and scaled an AI-native, multi-tenant SaaS platform from the ground up, bringing together database, workflow automation, a drag-and-drop UI builder, external portals, mailboxes, documents and integrations into a unified system
+
+As CTO, I led the engineering direction behind a small, high-impact team focused on one goal: reducing the time it takes to go from idea to a working application. Together, we shipped a fully dynamic UI builder and white-labeled portal system with authentication and scoped data access, cutting customer delivery timelines from weeks down to days.
+
+On the backend, we evolved a basic node-based workflow builder into a production-grade distributed workflow engine. This required rethinking execution, reliability, and scale, eventually supporting 100K+ executions per day per tenant with 99.9% reliability.
+
+I also architected and built the core systems behind SmartMocks, our AI interview platform. This included designing a distributed asynchronous processing pipeline capable of handling thousands of concurrent users, implementing fault-tolerant job orchestration using queues (retries, dead-letter queues, concurrency control), and developing LLM-based evaluation pipelines that reduced manual review effort by over 85%.
+
+Beyond systems, a big part of my role was building the team itself, mentoring engineers, setting technical direction, and establishing development standards that allowed us to move fast while maintaining reliability.`,
     side: "left",
   },
   {
@@ -69,16 +76,16 @@ const ExpandableDetails = ({ text }) => {
 
   return (
     <div className="mt-3">
-      <p
+      <div
         ref={textRef}
         className={cn(
-          "leading-7 text-muted-foreground",
+          "whitespace-pre-line leading-7 text-muted-foreground",
           !expanded && "line-clamp-4",
         )}
         style={{ fontSize: "var(--small-font-size)" }}
       >
         {text}
-      </p>
+      </div>
       {showToggle ? (
         <button
           type="button"
@@ -137,6 +144,9 @@ const TimelineItem = ({ item, isLast }) => {
   );
 };
 
+const qualificationTabsTriggerClassName =
+  "flex items-center gap-2 rounded-full px-4 py-2 font-medium text-muted-foreground/55 transition-colors hover:text-muted-foreground data-[state=active]:font-semibold data-[state=active]:text-foreground data-[state=active]:border-transparent data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:ring-0 dark:data-[state=active]:border-transparent dark:data-[state=active]:bg-transparent group-data-[variant=line]/tabs-list:data-[state=active]:border-transparent group-data-[variant=line]/tabs-list:data-[state=active]:bg-transparent group-data-[variant=line]/tabs-list:data-[state=active]:shadow-none dark:group-data-[variant=line]/tabs-list:data-[state=active]:border-transparent dark:group-data-[variant=line]/tabs-list:data-[state=active]:bg-transparent";
+
 const Qualification = () => {
   return (
     <section className="section" id="qualification">
@@ -151,7 +161,7 @@ const Qualification = () => {
           >
             <TabsTrigger
               value="education"
-              className="flex items-center gap-2 rounded-full px-4 py-2 font-medium text-muted-foreground/55 transition-colors hover:text-muted-foreground data-[state=active]:font-semibold data-[state=active]:text-foreground"
+              className={qualificationTabsTriggerClassName}
               style={{ fontSize: "var(--h3-font-size)" }}
             >
               <i className="uil uil-graduation-cap text-3xl"></i>
@@ -159,7 +169,7 @@ const Qualification = () => {
             </TabsTrigger>
             <TabsTrigger
               value="experience"
-              className="flex items-center gap-2 rounded-full px-4 py-2 font-medium text-muted-foreground/55 transition-colors hover:text-muted-foreground data-[state=active]:font-semibold data-[state=active]:text-foreground"
+              className={qualificationTabsTriggerClassName}
               style={{ fontSize: "var(--h3-font-size)" }}
             >
               <i className="uil uil-briefcase-alt text-3xl"></i>
