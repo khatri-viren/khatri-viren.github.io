@@ -13,7 +13,7 @@ const Home = () => {
           <div
             className="animate-profile relative size-[320px] justify-self-center overflow-hidden border border-white/30 shadow-(--surface-shadow-strong) max-[992px]:size-[260px] max-[992px]:shadow-(--surface-shadow) max-md:size-[210px] max-md:shadow-(--surface-shadow) max-[350px]:size-[180px]"
             role="img"
-            aria-label="Viren Khatri, full-stack engineer and technology leader based in Pune, India"
+            aria-label="Viren Khatri, full-stack engineer based in Pune, India"
           >
             <img
               src={profile}

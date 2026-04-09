@@ -21,10 +21,10 @@ export type RouteSeo = {
 /** Aligned with resume, LinkedIn, and on-page copy (About, Data). */
 const homeSeo: RouteSeo = {
   path: "/",
-  title: "Viren Khatri — Full-Stack Engineer & Technology Leader | Pune",
+  title: "Viren Khatri — Full-Stack Engineer | Pune",
   description:
-    "Full-stack engineer and technology leader in Pune. JavaScript/TypeScript, React, Next.js, Node.js — AI systems, no-code builders, workflow automation, and SaaS. Former Co-Founder & CTO at WorqHat. B.Tech CSE, MIT-WPU.",
-  ogImageAlt: "Viren Khatri — full-stack engineer and technology leader based in Pune, India",
+    "Full-stack engineer in Pune. JavaScript/TypeScript, React, Next.js, Node.js — AI systems, no-code builders, workflow automation, and SaaS. Former Co-Founder & CTO at WorqHat. B.Tech CSE, MIT-WPU.",
+  ogImageAlt: "Viren Khatri — full-stack engineer based in Pune, India",
 };
 
 const portfolioSeo: RouteSeo = {
@@ -39,7 +39,7 @@ const hobbiesSeo: RouteSeo = {
   path: "/hobbies",
   title: "Sketches & Artwork | Viren Khatri",
   description:
-    "Sketches and personal artwork by Viren Khatri — full-stack engineer and technology leader based in Pune.",
+    "Sketches and personal artwork by Viren Khatri — full-stack engineer based in Pune.",
   ogImageAlt: "Artwork and sketches by Viren Khatri",
 };
 
@@ -70,7 +70,7 @@ export function canonicalUrl(pathname: string): string {
 }
 
 const personDescription =
-  "Full-stack engineer and technology leader in Pune. Builds scalable products across the JavaScript/TypeScript stack (React, Next.js, Node.js), including AI-powered platforms, no-code builders, workflow automation, and SaaS. Former Co-Founder & CTO at WorqHat.";
+  "Full-stack engineer in Pune. Builds scalable products across the JavaScript/TypeScript stack (React, Next.js, Node.js), including AI-powered platforms, no-code builders, workflow automation, and SaaS. Former Co-Founder & CTO at WorqHat.";
 
 export function buildPersonJsonLd(): Record<string, unknown> {
   return {
@@ -78,7 +78,7 @@ export function buildPersonJsonLd(): Record<string, unknown> {
     "@type": "Person",
     name: "Viren Khatri",
     url: `${SITE_URL}/`,
-    jobTitle: "Full-Stack Engineer & Technology Leader",
+    jobTitle: "Full-Stack Engineer",
     description: personDescription,
     sameAs: [LINKEDIN_URL, GITHUB_URL, INSTAGRAM_URL],
     address: {

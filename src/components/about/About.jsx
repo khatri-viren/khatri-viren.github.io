@@ -28,9 +28,8 @@ const About = () => {
     cvBusyRef.current = true;
     setCvLoading(true);
     try {
-      const { default: href } = await import(
-        "../../assets/Viren_Khatri_9_April_2026.pdf"
-      );
+      const { default: href } =
+        await import("../../assets/Viren_Khatri_9_April_2026.pdf");
       const a = document.createElement("a");
       a.href = href;
       a.download = "Viren_Khatri_9_April_2026.pdf";
@@ -59,8 +58,8 @@ const About = () => {
           <div className="space-y-4 text-pretty text-sm leading-7 text-muted-foreground">
             <p>
               <span className="font-semibold text-foreground">
-                I&apos;m a full-stack engineer and technology leader passionate
-                about building scalable software products from the ground up.
+                I&apos;m a full-stack engineer passionate about building
+                scalable software products from the ground up.
               </span>
             </p>
             <p>
@@ -98,9 +97,8 @@ const About = () => {
             </ul>
             <p>
               Beyond software, I also enjoy experimenting with hardware, IoT
-              systems, and embedded devices, exploring how software and
-              physical systems can work together to build intelligent
-              automation.
+              systems, and embedded devices, exploring how software and physical
+              systems can work together to build intelligent automation.
             </p>
             <p>
               I&apos;m always interested in working on ambitious products,
